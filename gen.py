@@ -1,6 +1,6 @@
 # Future Work:
-# Full matrix gen
-# Crisscross matrix gen
+# Squircles (squares with rounded edges) gen
+# mxn rather than nxn
 
 
 from PIL import Image, ImageDraw
