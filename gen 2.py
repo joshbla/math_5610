@@ -1,6 +1,6 @@
 # Future Work:
-# Squircles (squares with rounded edges) gen
-# mxn rather than nxn
+# Full matrix gen
+# Crisscross matrix gen
 
 
 from PIL import Image, ImageDraw
@@ -142,19 +142,17 @@ for k in range(3, 24):
                     S = np.array(S[0]).astype(np.float64)
                     print(S)
 
-                    # If any row with a non-zero value in the last column is full of zero values, there is no solution
-                    # # else there are infinite solutions
-                    for i in reversed(range(n)):
+                    # find non-zero entries in last column
+                    # if that row is not all zeros, then there is no solution
+                    # else there are infinite solutions
+                    noSolution = False
+                    for i in range(n):
                         # i goes to nth row
                         # n goes to (n + 1)th column
-                        noSolution = False
                         if S[i, n] != 0:
                             # j goes to the nth column
-                            if all(S[i, j] == 0 for j in reversed(range(n))):
+                            if all(S[i, j] == 0 for j in range(n)):
                                 noSolution = True
-                                break
-                            else:
-                                noSolution = False
 
                     if noSolution:
                         solution = 'No Solution'
