@@ -142,7 +142,7 @@ for k in range(3, 24):
                     S = np.array(S[0]).astype(np.float64)
                     print(S)
 
-                    # if every row with a non-zero value in the last column is full of zero values, there is no solution
+                    # If any row with a non-zero value in the last column is full of zero values, there is no solution
                     # else there are infinite solutions
                     for i in reversed(range(n)):
                         # i goes to nth row
