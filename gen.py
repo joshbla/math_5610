@@ -147,6 +147,7 @@ for k in range(3, 24):
                     for i in reversed(range(n)):
                         # i goes to nth row
                         # n goes to (n + 1)th column
+                        noSolution = False
                         if S[i, n] != 0:
                             # j goes to the nth column
                             if all(S[i, j] == 0 for j in reversed(range(n))):
